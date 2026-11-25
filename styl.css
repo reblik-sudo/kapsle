@@ -1,0 +1,63 @@
+/* Kapsle — veřejné stránky (převzato z Kapsy) (zásady soukromí, podpora). Barvy a písmo jako v aplikaci. */
+@font-face { font-family: "Satoshi"; src: url("Satoshi-Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("Satoshi-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
+
+:root {
+  --papir: #FCECEC;
+  --panel: #F5E6E6;
+  --ink: #100F0F;
+  --tlumena: #5F5959;
+  --linka: #E2D2D2;
+  --akcent: #A53760;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papir: #030304;
+    --panel: #191616;
+    --ink: #FCECEC;
+    --tlumena: #BEB2B2;
+    --linka: #2A2727;
+    --akcent: #99B5FF;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papir);
+  color: var(--ink);
+  font: 400 17px/1.6 "Satoshi", -apple-system, system-ui, sans-serif;
+}
+.stranka { max-width: 680px; margin: 0 auto; padding: 56px 20px 80px; }
+
+.hlavicka { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+.znacka { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 19px; }
+.znacka svg { width: 28px; height: 28px; }
+.jazyky { display: flex; gap: 6px; font-size: 15px; }
+.jazyky a { color: var(--tlumena); text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+.jazyky a:hover { background: var(--panel); color: var(--ink); }
+
+h1 { font-weight: 500; font-size: 40px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 12px; }
+.uvod { font-size: 20px; color: var(--ink); margin: 0 0 8px; }
+.datum { color: var(--tlumena); font-size: 15px; margin: 0 0 40px; }
+h2 { font-weight: 500; font-size: 15px; letter-spacing: 0.02em; color: var(--tlumena); margin: 40px 0 10px; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin: 0 0 6px; }
+a { color: var(--akcent); }
+
+.karta { background: var(--panel); border-radius: 22px; padding: 22px 24px; margin: 0 0 12px; }
+.karta h3 { font-weight: 500; font-size: 17px; margin: 0 0 6px; }
+.karta p:last-child { margin: 0; }
+
+.jazyk + .jazyk { margin-top: 88px; padding-top: 56px; border-top: 1px solid var(--linka); }
+.paticka { margin-top: 80px; color: var(--tlumena); font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.paticka svg { width: 14px; height: 12px; }
+
+@media (max-width: 520px) {
+  .stranka { padding-top: 32px; }
+  h1 { font-size: 32px; }
+  .uvod { font-size: 18px; }
+}
